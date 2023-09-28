@@ -3,12 +3,13 @@ import styled from "styled-components";
 const StyledScore = styled.div`
   display: flex;
   flex-direction: column;
-
+  align-self: center;
   text-align: center;
 
-  & p {
-    font-size: 5.2rem;
-    font-weight: 500;
+  & div {
+    display: flex;
+    justify-content: center;
+    font-size: 4.8rem;
   }
 
   & span {
@@ -19,7 +20,7 @@ const StyledScore = styled.div`
 function Score() {
   return (
     <StyledScore>
-      <p>0</p>
+      <div>0</div>
       <span>Total Score</span>
     </StyledScore>
   );
