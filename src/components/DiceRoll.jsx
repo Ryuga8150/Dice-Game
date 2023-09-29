@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 import styled from "styled-components";
+import { useGameContext } from "../context/GameContext";
 
 const StyledDiceBox = styled.div`
   margin: 0 auto;
@@ -39,13 +41,17 @@ const Button = styled.button`
 
 DiceRoll.propTypes = {
   onShowRules: PropTypes.func,
+  diceRolled: PropTypes.number,
+  onDiceRoll: PropTypes.func,
 };
 
 function DiceRoll({ onShowRules }) {
+  const { diceRolled, handleDiceRoll } = useGameContext();
+
   return (
     <StyledDiceBox>
-      <ImageBox>
-        <img src="/images/dice_1.png" alt="A Dice" />
+      <ImageBox onClick={handleDiceRoll}>
+        <img src={`/images/dice_${diceRolled}.png`} alt="A Dice" />
       </ImageBox>
 
       <span>Click on Dice to Roll</span>

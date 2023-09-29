@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useGameContext } from "../context/GameContext";
 
 const StyledScore = styled.div`
   display: flex;
@@ -18,9 +19,11 @@ const StyledScore = styled.div`
 `;
 
 function Score() {
+  const { score } = useGameContext();
+
   return (
     <StyledScore>
-      <div>0</div>
+      <div>{score}</div>
       <span>Total Score</span>
     </StyledScore>
   );
