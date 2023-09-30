@@ -3,7 +3,7 @@ import ScoreBoard from "./ScoreBoard";
 import DiceRoll from "./DiceRoll";
 import Rules from "./Rules";
 import { useState } from "react";
-import { GameProvider, useGameContext } from "../context/GameContext";
+import { GameProvider } from "../context/GameContext";
 
 const StyledGamePage = styled.div`
   padding: 2.4rem 1.2rem;

@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
 import styled from "styled-components";
 import { useGameContext } from "../context/GameContext";
 
@@ -46,7 +45,7 @@ DiceRoll.propTypes = {
 };
 
 function DiceRoll({ onShowRules }) {
-  const { diceRolled, handleDiceRoll } = useGameContext();
+  const { diceRolled, handleDiceRoll, reset } = useGameContext();
 
   return (
     <StyledDiceBox>
@@ -56,7 +55,7 @@ function DiceRoll({ onShowRules }) {
 
       <span>Click on Dice to Roll</span>
 
-      <Button>Reset Score</Button>
+      <Button onClick={reset}>Reset Score</Button>
       <Button onClick={onShowRules}>Show Rules</Button>
     </StyledDiceBox>
   );
